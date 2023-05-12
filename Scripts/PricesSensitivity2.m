@@ -16,6 +16,8 @@ CEPCI2022 = 817.5;
 
 naturalGasPrices = readmatrix('Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'C2:C48');
 elecPrices = readmatrix('Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'S2:S48')/1000;
+HGridAvg = readmatrix('Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'W2:W48'); % in USD per ton
+
 
 % coalPrices = 0:50:5000;
 NGLHV1 = 13.1; % in MWh per ton
@@ -78,6 +80,23 @@ elecReq = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D12:D12'); % in kWh/hr
 gAmmoniaPriceWithoutH = gAmmoniaPrice - (hydrogenReq * hydrogenPrice + elecReq * elecPrice) / gAmmoniaProduced; % USD2019 per ton
 gAmmoniaPriceWithoutH = [gAmmoniaPriceWithoutH gAmmoniaPriceWithoutH*a...
     gAmmoniaPriceWithoutH*b gAmmoniaPriceWithoutH*c];
+ 
+% green ammonia from grid electricity
+for i = 1:length(elecPrices)
+    if i > 0 && i <= 12
+        j = 1;
+    elseif i > 12 && i <= 24
+        j = 2;
+    elseif i > 24 && i <= 36
+        j = 3;
+    else
+        j = 4;
+    end
+    gAmmoniaGridPrice(i) = gAmmoniaPriceWithoutH(j)+(hydrogenReq*HGridAvg(i)+...
+        elecReq*elecPrices(i))/gAmmoniaProduced;
+end
+writematrix(gAmmoniaGridPrice', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'N2')
+
 
 % Green hydrogen prices from Parkinson 2019
 HBiomassCCS =  readmatrix('Prices sensitivity 2.xlsx', 'Sheet', 'LCOH', 'Range', 'B20:Q20');
@@ -236,6 +255,10 @@ for i = 1:length(naturalGasPrices)
     CPrices(i) = CO2Req*CO2DAC(j) + NGReqCarbonDioxide*(naturalGasPrices(i) - NGPriceDAC(j));
     CPricesLow(i) = CO2Req*CO2DACLow(j) + NGReqCarbonDioxide*(naturalGasPrices(i) - NGPriceDAC(j));
     CPricesHigh(i) = CO2Req*CO2DACHigh(j) + NGReqCarbonDioxide*(naturalGasPrices(i) - NGPriceDAC(j));
+    
+    gMethanolGrid(i) = gMethanolWithoutHydrogenAndCO2(j) + ...
+        (H2Req*HGridAvg(i) + CO2Req*CO2DAC(j) + elecReq*elecPrices(i)) + ...
+        NGReqCarbonDioxide*(naturalGasPrices(i) - NGPriceDAC(j));
 
     gMethanolWind(i) = gMethanolWithoutHydrogenAndCO2(j) + ...
         (H2Req*HWindAvg(j) + CO2Req*CO2DAC(j) + elecReq*elecPrices(i)) + ...
@@ -286,6 +309,7 @@ gMethanolPrice = [gMethanolBiomassCCS gMethanolWind'...
 gMethanolPricesSe = [gMethanolWindLow' gMethanolWindHigh' gMethanolSolarLow' gMethanolSolarHigh'...
     gMethanolNuclearLow' gMethanolNuclearHigh'];
 
+writematrix(gMethanolGrid', 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol', 'Range', 'N2')
 writematrix(gMethanolPrice, 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol', 'Range', 'F2')
 writematrix(gMethanolPricesSe, 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol high low', 'Range', 'E2')
 writematrix(gMethanolSMRCCS', 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol', 'Range', 'S2')

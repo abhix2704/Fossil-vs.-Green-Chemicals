@@ -35,6 +35,7 @@ index = df["Index"]
 times = df["Time"]
 NGprices = df["NG price"]/1000
 market = df["Market"]
+elecPrices = df["Electricity"]/1000
 BAUprices = df["BAU"]/1000
 gABiomassCCS = df["Biomass"]
 gAWind = df["Wind"]
@@ -86,10 +87,10 @@ plt.title("a", color = "black", fontsize = fontsize_title, fontweight = "bold")
 #plt.plot([37.5]*len(ylist), ylist, color = "grey", linewidth = 0.2, linestyle = "--", zorder = 0)
 #plt.plot([41.5]*len(ylist), ylist, color = "grey", linewidth = 0.2, linestyle = "--", zorder = 0)
 #plt.plot(index[0:l], market[0:l], "--", color = "brown", linewidth = 2)
-plt.plot(index[NGindex], NGprices[NGindex], color = "#808080", linewidth = 1.5, zorder = 0, linestyle = "--")
-plt.plot(index[NGindex], BAUprices[NGindex], color = "black", linewidth = 2, zorder = 1, linestyle = "-")
-plt.scatter(index[NGindex], NGprices[NGindex], marker = "o", facecolors = '#808080', edgecolors = "none", s = 20, zorder = 2)
-plt.scatter(index[NGindex], BAUprices[NGindex], facecolors = "#ffffff", edgecolors = "black", marker = "s", s = 15, zorder = 3)
+plt.plot(index[NGindex], NGprices[NGindex], color = "#808080", linewidth = 1.5, zorder = 2, linestyle = "--")
+plt.plot(index[NGindex], BAUprices[NGindex], color = "black", linewidth = 2, zorder = 3, linestyle = "-")
+plt.scatter(index[NGindex], NGprices[NGindex], marker = "o", facecolors = '#808080', edgecolors = "none", s = 20, zorder = 4)
+plt.scatter(index[NGindex], BAUprices[NGindex], facecolors = "#ffffff", edgecolors = "black", marker = "s", s = 15, zorder = 5)
 plt.ylabel("Production cost or price [USD kg$^\mathrm{-1}$]")
 ax = plt.gca()
 ax.set_xticks(ma, labels = maLabels)
@@ -98,11 +99,16 @@ ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 plt.xlim(-1,index[len(index)-1]+2)
 plt.ylim(0,max(NGprices)+0.2)
 
-
 plt.text(12, 0.870, "Supply chain\ndisruption by\nCOVID", color = "grey", fontsize = fontsize_label, ha = "right")
 plt.text(22, 1.400, "Rising\ninflation", color = "grey", fontsize = fontsize_label, ha = "right")
 plt.text(37, 2.080, "Russia-Ukraine\nconflict", color = "grey", fontsize = fontsize_label, ha = "right")
 plt.text(41, 2.700, "Russia cuts\nsupply", color = "grey", fontsize = fontsize_label, ha = "right")
+
+plt.twinx()
+plt.ylim(0.001,1)
+plt.yticks([])
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#36454F", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#36454F", edgecolors = "#36454F", marker = "P", s = 15, zorder = 1)
 
 
 sheetName = "Methanol"
@@ -167,9 +173,20 @@ plt.text(22, 1.400, "Rising\ninflation", color = "grey", fontsize = fontsize_lab
 plt.text(37, 2.080, "Russia-Ukraine\nconflict", color = "grey", fontsize = fontsize_label, ha = "right")
 plt.text(41, 2.700, "Russia cuts\nsupply", color = "grey", fontsize = fontsize_label, ha = "right")
 
+plt.twinx()
+plt.ylim(0.001,1)
+#plt.yticks([])
+plt.ylabel("Electricity price [USD kWh$^\mathrm{-1}$]")
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#36454F", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#36454F", edgecolors = "#36454F", marker = "P", s = 15, zorder = 1)
+
+
 legend_elements = [Line2D([0], [0], marker='o', color = "none", 
                           markerfacecolor ='#808080', markeredgecolor = "none",
                           label = 'Natural gas price', markersize = 5),
+                   Line2D([0], [0], marker='P', color = "none", 
+                                             markerfacecolor ='#36454F', markeredgecolor = "#36454F",
+                                             label = 'Grid electrictiy', markersize = 5),
                    Line2D([0], [0], marker='s', color = "none", 
                                              markerfacecolor ='#ffffff', markeredgecolor = "black",
                                              label = 'Fossil ammonia', markersize = 5),
@@ -177,7 +194,7 @@ legend_elements = [Line2D([0], [0], marker='o', color = "none",
                                              markerfacecolor ='#ffffff', markeredgecolor = "black",
                                              label = 'Fossil methanol', markersize = 5)]
 
-fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 3, 
+fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 4, 
            prop={"size":8}, bbox_to_anchor=(0.5, 0.05), handletextpad = 0.1)
 
 

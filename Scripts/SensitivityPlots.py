@@ -50,7 +50,7 @@ gASolarHigh = df["Solar high"]/1000
 
 sheetName = "Methanol"
 df = pd.read_excel(fileName, sheetName)
-BAUprices = df["BAU"]/1000
+MBAUprices = df["BAU"]/1000
 gMWind = df["DAC + wind"]/1000
 gMSolar = df["DAC + solar"]/1000
 gMSMRCCS = df["SMR CCS"]/1000
@@ -147,7 +147,7 @@ plt.xlim(0,index[len(index)-1]+1)
 plt.subplot(gs1[1])
 #plt.title("(f) Methanol - H$_\mathrm{2}$ SMR$_\mathrm{CCS}$", color = "black", fontsize = fontsize_title, fontweight = "bold")
 plt.title("d Methanol", color = "black", fontsize = fontsize_title, fontweight = "bold")
-plt.scatter(index[0:l], BAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
+plt.scatter(index[0:l], MBAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
 plt.xlim(0,index[len(index)-1]+2)
 plt.scatter(index[0:l], gMSMRCCS[0:l], facecolors = "#A78DD8", edgecolors = "#52318E", marker = "d", s = 15, zorder = 2)
 plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
@@ -159,7 +159,7 @@ plt.xticks([])
 plt.subplot(gs1[3])
 #plt.title("(e) Methanol - H$_\mathrm{2}$ solar", color = "black", fontsize = fontsize_title, fontweight = "bold")
 plt.title("e", color = "black", fontsize = fontsize_title, fontweight = "bold")
-plt.scatter(index[0:l], BAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
+plt.scatter(index[0:l], MBAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
 plt.scatter(index[0:l], gMSolar[0:l], marker = "h", facecolors = "#FB7B71", edgecolors = "#B71205", s = 15, zorder = 2)
 plt.plot(index[0:l], gMSolarLow[0:l], color = '#FB7B71', zorder = 0, linewidth = 0.5)
 plt.plot(index[0:l], gMSolarHigh[0:l], color = '#FB7B71', zorder = 0, linewidth = 0.5)
@@ -177,7 +177,7 @@ plt.xticks([])
 plt.subplot(gs1[5])
 #plt.title("(d) Methanol - H$_\mathrm{2}$ wind", color = "black", fontsize = fontsize_title, fontweight = "bold")
 plt.title("f", color = "black", fontsize = fontsize_title, fontweight = "bold")
-plt.scatter(index[0:l], BAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
+plt.scatter(index[0:l], MBAUprices[0:l], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
 plt.scatter(index[0:l], gMWind[0:l], marker = "^", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 2)
 plt.plot(index[0:l], gMWindLow[0:l], color = '#6DD2EA', zorder = 0, linewidth = 0.5)
 plt.plot(index[0:l], gMWindHigh[0:l], color = '#6DD2EA', zorder = 0, linewidth = 0.5)
@@ -215,7 +215,7 @@ legend_elements = [Line2D([0], [0], marker='s', color = "none",
 fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 5, 
            prop={"size":8}, bbox_to_anchor=(0.5, 0.08), handletextpad = 0.1)
 
-plt.savefig('Figure 2.jpg', dpi=600, format='jpg', bbox_inches="tight")
-plt.savefig('Figure 2.svg', dpi=600, format='svg', bbox_inches="tight")
+plt.savefig('Figure S9.jpg', dpi=600, format='jpg', bbox_inches="tight")
+plt.savefig('Figure S9.svg', dpi=600, format='svg', bbox_inches="tight")
 
 
