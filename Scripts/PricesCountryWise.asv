@@ -1,0 +1,198 @@
+clear 
+close all
+clc
+
+%% CEPCI indexes
+CEPCI2008 = 575.4;
+CEPCI2009 = 521.9;
+CEPCI2012 = 584.6;
+CEPCI2015 = 556.8;
+CEPCI2017 = 567.5;
+CEPCI2018 = 603.1;
+CEPCI2019 = 607.5;
+CEPCI2020 = 596.2;
+CEPCI2021 = 708.0;
+CEPCI2022 = 817.5;
+
+naturalGasPrices = readmatrix('Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'D2:D48');
+elecPrices = readmatrix('Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'E2:E48')/1000;
+PPP = readmatrix('Prices regionalization.xlsx', 'Sheet', 'PPP', 'Range', 'B17:J18');
+PPP = PPP./PPP(:,9); % equalize with respect to Europe
+
+a = CEPCI2020/CEPCI2019;
+b = CEPCI2021/CEPCI2019;
+c = CEPCI2022/CEPCI2019;
+
+%% Ammonia sensitivity
+
+% BAU process
+fileName = 'Ammonia/BAU - 2019.xlsx';
+
+ammoniaPrice = readmatrix(fileName, 'Sheet', 'Summary', 'Range', 'C24:C24') * 1000; % USD2019 per ton
+naturalGasReq = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D5:D5'); % in ton/hr
+naturalGasReq = naturalGasReq + readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D15:D15'); % in ton/hr
+naturalGasPrice = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'E5:E5') * CEPCI2019 / CEPCI2018; % in USD2019 per ton
+elecReq = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D9:D9'); % in kWh/hr
+elecPrice = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'E9:E9') * CEPCI2019 / CEPCI2018; % in USD2019 per kWh
+ammoniaProduced = readmatrix(fileName, 'Sheet', 'Summary', 'Range', 'C23:C23') / 1000; % amount of ammonia produced in ton/hr
+
+ammoniaPriceWithoutNGElec = ammoniaPrice - (naturalGasReq * naturalGasPrice + elecReq * elecPrice) / ammoniaProduced; % USD2019 per ton
+ammoniaPriceWithoutNGElec = [ammoniaPriceWithoutNGElec ammoniaPriceWithoutNGElec*a...
+    ammoniaPriceWithoutNGElec*b ammoniaPriceWithoutNGElec*c]; 
+
+ammoniaPricesWithoutElec = zeros(length(naturalGasPrices), 1)';
+j = 1;
+for i = 1:length(naturalGasPrices)
+    if i > 0 && i <= 12
+        j = 1;
+    elseif i > 12 && i <= 24
+        j = 2;
+    elseif i > 24 && i <= 36
+        j = 3;
+    else
+        j = 4;
+    end
+    ammoniaPricesWithoutElec(i) = (ammoniaPriceWithoutNGElec(j) + (naturalGasPrices(i) * naturalGasReq) ./ ammoniaProduced);
+end
+
+ammoniaPricesWithoutElec = ammoniaPricesWithoutElec';
+ammoniaPrices = ammoniaPricesWithoutElec + (elecPrices .* elecReq) ./ ammoniaProduced;
+
+prices = ammoniaPrices;
+writematrix(prices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'F2')
+
+% Green process
+fileName = 'Ammonia/Green ammonia - 2019.xlsx';
+
+gAmmoniaPrice = readmatrix(fileName, 'Sheet', 'Summary', 'Range', 'C26:C26') * 1000; % USD2019 per ton
+gAmmoniaProduced = readmatrix(fileName, 'Sheet', 'Summary', 'Range', 'C25:C25') / 1000; % amount of ammonia produced in ton/hr
+hydrogenPrice = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'E6:E6'); % in ton/hr
+hydrogenReq = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D6:D6'); % in ton/hr
+elecReq = readmatrix(fileName, 'Sheet', 'OPEX', 'Range', 'D12:D12'); % in kWh/hr
+
+gAmmoniaPartial = gAmmoniaPrice - (hydrogenReq * hydrogenPrice + elecReq * elecPrice) / gAmmoniaProduced; % USD2019 per ton
+gAmmoniaPartial = [gAmmoniaPartial gAmmoniaPartial*a...
+    gAmmoniaPartial*b gAmmoniaPartial*c];
+ 
+gAmmoniaPriceWithoutHElec = zeros(length(naturalGasPrices), 1);
+% green ammonia from grid electricity
+for i = 1:length(elecPrices)
+    if i > 0 && i <= 12
+        j = 1;
+    elseif i > 12 && i <= 24
+        j = 2;
+    elseif i > 24 && i <= 36
+        j = 3;
+    else
+        j = 4;
+    end
+    gAmmoniaPriceWithoutHElec(i) = gAmmoniaPartial(j);
+end
+
+gAmmoniaPriceWithoutH = gAmmoniaPriceWithoutHElec + (elecPrices .* elecReq)./gAmmoniaProduced;
+
+windLCOHV = readmatrix('Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'N2:N5')'*1000; 
+solarLCOHV = readmatrix('Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'O2:O5')'*1000; 
+
+windLCOH = zeros(length(elecPrices), 1);
+solarLCOH = zeros(length(elecPrices), 1);
+
+for i = 1:length(elecPrices)
+    if i > 0 && i <= 12
+        windLCOH(i,:) = windLCOHV(1);
+        solarLCOH(i,:) = solarLCOHV(1);
+    elseif i > 12 && i <= 24
+        windLCOH(i,:) = windLCOHV(2);
+        solarLCOH(i,:) = solarLCOHV(2);
+    elseif i > 24 && i <= 36
+        windLCOH(i,:) = windLCOHV(3);
+        solarLCOH(i,:) = solarLCOHV(3);
+    else
+        windLCOH(i,:) = windLCOHV(4);
+        solarLCOH(i,:) = solarLCOHV(4);
+    end
+end
+
+gWindAmmoniaPrices = gAmmoniaPriceWithoutH + windLCOH .* hydrogenReq ./ gAmmoniaProduced;
+gSolarAmmoniaPrices = gAmmoniaPriceWithoutH + solarLCOH .* hydrogenReq ./ gAmmoniaProduced;
+
+writematrix(gWindAmmoniaPrices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'G2')
+writematrix(gSolarAmmoniaPrices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'H2')
+
+
+%% Methanol sensitivity
+
+% BAU process (data from Plant to Planet Methanol)
+naturalGasReq = (0.6518*36.6 + 6.93)/47.1; % ton NG per ton methanol
+elecReq = 0.074*1000; % kWh per ton methanol
+methanolPriceWithoutNGElec = 84.8*CEPCI2019/CEPCI2015; % in USD2019 per ton methanol
+methanolPriceWithoutNGElec = [methanolPriceWithoutNGElec methanolPriceWithoutNGElec*a...
+    methanolPriceWithoutNGElec*b methanolPriceWithoutNGElec*c]; % in USD2022 per ton
+
+methanolPricesWithoutElec = zeros(length(naturalGasPrices), 1)';
+j = 1;
+for i = 1:length(naturalGasPrices)
+    if i > 0 && i <= 12
+        j = 1;
+    elseif i > 12 && i <= 24
+        j = 2;
+    elseif i > 24 && i <= 36
+        j = 3;
+    else
+        j = 4;
+    end
+    methanolPricesWithoutElec(i) = methanolPriceWithoutNGElec(j) + naturalGasPrices(i) * naturalGasReq; 
+end
+
+methanolPricesWithoutElec = methanolPricesWithoutElec';
+methanolPrices = methanolPricesWithoutElec + (elecPrices .* elecReq);
+
+prices = methanolPrices;
+writematrix(prices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'I2')
+
+% DAC process (data from Daniel et al. 2021)
+gMethanolPrice = 1380; % USD2015 per ton
+CO2Req = 1.45; % ton carbon dioxide per ton methanol
+H2Req = 0.19; % ton hydrogen per ton methanol
+CO2Price = 160; % USD2015 per ton
+H2Price = 5240; % USD2015 per ton
+elecReq = 0.3*1000; % kWh per ton methanol
+elecPrice = 104.61/1000; % USD2015 per kWh
+gMethanolPartial = gMethanolPrice - CO2Req * CO2Price - H2Price * H2Req - elecReq * elecPrice;
+gMethanolPartial = gMethanolPartial * CEPCI2019 / CEPCI2015;
+gMethanolPartial = [gMethanolPartial gMethanolPartial*a...
+    gMethanolPartial*b gMethanolPartial*c];
+
+CO2DACt = 164.2;
+CO2DAC = [CO2DACt CO2DACt*a CO2DACt*b CO2DACt*c];
+NGLHV1 = 13.1; % in MWh per ton
+NGLHV2 = 36.6 / 3600; % in MWh per m3
+NGDensity = NGLHV2 / NGLHV1; % ton per m3
+NGReqCarbonDioxide = 138.89; % m3 per ton of carbon dioxide
+NGReqCarbonDioxide = NGReqCarbonDioxide * NGDensity; % ton of NG per ton of carbon dioxide
+NGReqCarbonDioxide = NGReqCarbonDioxide * CO2Req; % ton NG per ton methanol
+NGPriceDAC = 3.5 * 47.1 * CEPCI2019 / CEPCI2018; % refer Keith 2018
+NGPriceDAC = [NGPriceDAC NGPriceDAC*a NGPriceDAC*b NGPriceDAC*c];
+
+gMethanolPriceWithoutHElec = zeros(length(naturalGasPrices), 1);
+% green ammonia from grid electricity
+for i = 1:length(elecPrices)
+    if i > 0 && i <= 12
+        j = 1;
+    elseif i > 12 && i <= 24
+        j = 2;
+    elseif i > 24 && i <= 36
+        j = 3;
+    else
+        j = 4;
+    end
+    gMethanolPriceWithoutHElec(i) = gMethanolPartial(j) + CO2Req*CO2DAC(j) + NGReqCarbonDioxide*(naturalGasPrices(i) - NGPriceDAC(j));
+end
+
+gMethanolPriceWithoutH = gMethanolPriceWithoutHElec + (elecPrices .* elecReq);
+
+gWindMethanolPrices = gMethanolPriceWithoutH + windLCOH .* H2Req;
+gSolarMehtanolPrices = gMethanolPriceWithoutH + solarLCOH .* H2Req;
+
+writematrix(gWindMethanolPrices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'J2')
+writematrix(gSolarMehtanolPrices, 'Prices regionalization.xlsx', 'Sheet', 'US', 'Range', 'K2')

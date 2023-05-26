@@ -23,12 +23,12 @@ import numpy as np
 from matplotlib.lines import Line2D
 
 plt.rcParams["figure.autolayout"] = True
-plt.rcParams.update({'font.size': 12})
+plt.rcParams.update({'font.size': 8})
 plt.rcParams['font.family'] = 'Arial'
-fig = plt.figure(figsize=(fig_length[2],fig_height*0.5))
+fig = plt.figure(figsize=(fig_length[2],fig_height*0.3))
 
 gs1 = gridspec.GridSpec(1, 2)
-#gs1.update(wspace = 0, hspace = 0.3)
+gs1.update(wspace = 0.4)
 
 fileName = "Prices sensitivity 2.xlsx"
 
@@ -101,14 +101,14 @@ for i in range(0, len(NGprices)):
 
 # Initialise the spider plot
 ax = plt.subplot(gs1[0], polar=True)
-ax.set_title("Ammonia [USD kg$^\mathrm{-1}$]", fontsize = 14, fontweight = "bold")
+ax.set_title("a Ammonia [USD kg$^\mathrm{-1}$]", fontsize = fontsize_title, fontweight = "bold")
 ax.set_theta_offset(pi/2)  # shift 90 degrees
 ax.set_theta_direction(-1)  # clockwise
 ax.set_thetamax(36)
 ax.patch.set_facecolor("#ffffff")
 ax.patch.set_alpha(0.05)
 
-plt.xticks(angles, timeTicks, color = '#808080', fontsize = 10)
+plt.xticks(angles, timeTicks, color = '#808080')
 for i, label in enumerate(ax.get_xticklabels()):
     angle = angles[i]
     if angle == 0:
@@ -222,14 +222,14 @@ ax.plot(angles, gAWind[NGindex], color = "#167F99", linewidth = 1.5, zorder = 21
 
 # Initialise the spider plot
 ax = plt.subplot(gs1[1], polar=True)
-ax.set_title("Methanol [USD kg$^\mathrm{-1}$]", fontsize = 14, fontweight = "bold")
+ax.set_title("b Methanol [USD kg$^\mathrm{-1}$]", fontsize = fontsize_title, fontweight = "bold")
 ax.set_theta_offset(pi/2)  # shift 90 degrees
 ax.set_theta_direction(-1)  # clockwise
 ax.set_thetamax(36)
 ax.patch.set_facecolor("#ffffff")
 ax.patch.set_alpha(0.05)
 
-plt.xticks(angles, timeTicks, color = '#808080', fontsize = 10)
+plt.xticks(angles, timeTicks, color = '#808080')
 for i, label in enumerate(ax.get_xticklabels()):
     angle = angles[i]
     if angle == 0:
@@ -336,7 +336,7 @@ ax.scatter(angles, gMWind[NGindex], marker = "^", s = 15, facecolor = "#6DD2EA",
 ax.plot(angles, MBAUprices[NGindex], color = "#000000", linewidth = 1.5, zorder = 2)
 ax.plot(angles, gMWind[NGindex], color = "#167F99", linewidth = 1.5, zorder = 2)
 """
-"""
+
 
 legend_elements = [Line2D([0], [0], marker='s', color = "none", 
                                              markerfacecolor ='#ffffff', markeredgecolor = "#000000",
@@ -355,9 +355,9 @@ legend_elements = [Line2D([0], [0], marker='s', color = "none",
                                              label = 'H$_\mathrm{2}$ wind', markersize = 5)
                      ]
 
-fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 5, 
-          prop={"size":12}, bbox_to_anchor=(0.5, 0.2), handletextpad = 0.1)
-
+#fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 5, 
+        #  prop={"size":12}, bbox_to_anchor=(0.5, 0.2), handletextpad = 0.1)
+"""
 plt.savefig('Slide 7.jpg', dpi=600, format='jpg', bbox_inches="tight")
 plt.savefig('Slide 7.svg', dpi=600, format='svg', bbox_inches="tight")
 

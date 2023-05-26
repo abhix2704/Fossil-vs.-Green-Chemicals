@@ -25,7 +25,7 @@ plt.rcParams.update({'font.size': 8})
 plt.rcParams['font.family'] = 'Arial'
 fig = plt.figure(figsize=(fig_length[2],fig_height*0.35))
 gs1 = gridspec.GridSpec(1, 2)
-gs1.update(wspace = 0.1, hspace = 0)
+gs1.update(wspace = 0.075, hspace = 0)
 
 
 
@@ -65,7 +65,7 @@ gMSolarLow = df["DAC + solar low"]/1000
 gMSolarHigh = df["DAC + solar high"]/1000
 
 max1 = max(gAGrid) + 150/1000
-max2 = max(gMGrid) + 150/1000
+max2 = 6.5
 maxX = max(max1, max2)
 
 l = len(times)
@@ -97,18 +97,18 @@ NGindex = [0,3,7,12,15,19,24,27,31,36,39,43,46]
 plt.subplot(gs1[0])
 #plt.title("(c) Ammonia - H$_\mathrm{2}$ SMR$_\mathrm{CCS}$", color = "black", fontsize = fontsize_title, fontweight = "bold")
 plt.title("a Ammonia", color = "black", fontsize = fontsize_title, fontweight = "bold")
-plt.plot(index[NGindex], BAUprices[NGindex], color = "black", linewidth = 2, zorder = 1, linestyle = "-")
+plt.plot(index[NGindex], BAUprices[NGindex], color = "black", linewidth = 1, zorder = 1, linestyle = "-")
 plt.scatter(index[NGindex], BAUprices[NGindex], facecolors = "#ffffff", edgecolors = "black", marker = "s", s = 15, zorder = 1)
-plt.plot(index[NGindex], gASMRCCS[NGindex], color = "#52318E", linewidth = 1.5, zorder = 2, linestyle = "-")
+plt.plot(index[NGindex], gASMRCCS[NGindex], color = "#52318E", linewidth = 1, zorder = 2, linestyle = "-")
 plt.scatter(index[NGindex], gASMRCCS[NGindex], facecolors = "#A78DD8", edgecolors = "#52318E", marker = "d", s = 15, zorder = 2)
-plt.plot(index[NGindex], gASolar[NGindex], color = "#B71205", linewidth = 1.5, zorder = 3, linestyle = "-")
-plt.scatter(index[NGindex], gASolar[NGindex], marker = "^", facecolors = "#FB7B71", edgecolors = "#B71205", s = 15, zorder = 3)
-plt.plot(index[NGindex], gAWind[NGindex], color = "#167F99", linewidth = 1.5, zorder = 4, linestyle = "-")
-plt.scatter(index[NGindex], gAWind[NGindex], marker = "h", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 4)
-plt.plot(index[NGindex], gAGrid[NGindex], color = "#808080", linewidth = 1.5, zorder = 1, linestyle = "-")
-plt.scatter(index[NGindex], gAGrid[NGindex], marker = "o", facecolors = "#D3D3D3", edgecolors = "#808080", s = 15, zorder = 1)
+plt.plot(index[NGindex], gASolar[NGindex], color = "#B71205", linewidth = 1, zorder = 3, linestyle = "-")
+plt.scatter(index[NGindex], gASolar[NGindex], marker = "h", facecolors = "#FB7B71", edgecolors = "#B71205", s = 15, zorder = 3)
+plt.plot(index[NGindex], gAWind[NGindex], color = "#167F99", linewidth = 1, zorder = 4, linestyle = "-")
+plt.scatter(index[NGindex], gAWind[NGindex], marker = "^", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 4)
+plt.plot(index[NGindex], gAGrid[NGindex], color = "#3D5A80", linewidth = 1, zorder = 1, linestyle = "-")
+plt.scatter(index[NGindex], gAGrid[NGindex], marker = "o", facecolors = "#6B8AB5", edgecolors = "#3D5A80", s = 15, zorder = 1)
 plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
-plt.ylim(0, max1)
+plt.ylim(0, max2)
 ax = plt.gca()
 ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 ax.set_xticks(ma, labels = maLabels)
@@ -161,22 +161,23 @@ plt.xlim(0,index[len(index)-1]+1)
 
 plt.subplot(gs1[1])
 plt.title("b Methanol", color = "black", fontsize = fontsize_title, fontweight = "bold")
-plt.plot(index[NGindex], MBAUprices[NGindex], color = "black", linewidth = 2, zorder = 1, linestyle = "-")
+plt.plot(index[NGindex], MBAUprices[NGindex], color = "black", linewidth = 1, zorder = 1, linestyle = "-")
 plt.scatter(index[NGindex], MBAUprices[NGindex], facecolors = "#ffffff", edgecolors = "black", marker = "D", s = 15, zorder = 1)
-plt.plot(index[NGindex], gMSMRCCS[NGindex], color = "#52318E", linewidth = 1.5, zorder = 2, linestyle = "-")
+plt.plot(index[NGindex], gMSMRCCS[NGindex], color = "#52318E", linewidth = 1, zorder = 2, linestyle = "-")
 plt.scatter(index[NGindex], gMSMRCCS[NGindex], facecolors = "#A78DD8", edgecolors = "#52318E", marker = "d", s = 15, zorder = 2)
-plt.plot(index[NGindex], gMSolar[NGindex], color = "#B71205", linewidth = 1.5, zorder = 3, linestyle = "-")
-plt.scatter(index[NGindex], gMSolar[NGindex], marker = "^", facecolors = "#FB7B71", edgecolors = "#B71205", s = 15, zorder = 3)
-plt.plot(index[NGindex], gMWind[NGindex], color = "#167F99", linewidth = 1.5, zorder = 4, linestyle = "-")
-plt.scatter(index[NGindex], gMWind[NGindex], marker = "h", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 4)
-plt.plot(index[NGindex], gMGrid[NGindex], color = "#808080", linewidth = 1.5, zorder = 1, linestyle = "-")
-plt.scatter(index[NGindex], gMGrid[NGindex], marker = "o", facecolors = "#D3D3D3", edgecolors = "#808080", s = 15, zorder = 1)
+plt.plot(index[NGindex], gMSolar[NGindex], color = "#B71205", linewidth = 1, zorder = 3, linestyle = "-")
+plt.scatter(index[NGindex], gMSolar[NGindex], marker = "h", facecolors = "#FB7B71", edgecolors = "#B71205", s = 15, zorder = 3)
+plt.plot(index[NGindex], gMWind[NGindex], color = "#167F99", linewidth = 1, zorder = 4, linestyle = "-")
+plt.scatter(index[NGindex], gMWind[NGindex], marker = "^", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 4)
+plt.plot(index[NGindex], gMGrid[NGindex], color = "#3D5A80", linewidth = 1, zorder = 1, linestyle = "-")
+plt.scatter(index[NGindex], gMGrid[NGindex], marker = "o", facecolors = "#6B8AB5", edgecolors = "#3D5A80", s = 15, zorder = 1)
 plt.ylim(0, max2)
 ax = plt.gca()
 ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 ax.set_xticks(ma, labels = maLabels)
 ax.set_xticks(mi, minor=True)
 plt.xlim(-1,index[len(index)-1]+2)
+plt.yticks([])
 
 """
 plt.subplot(gs1[3])
@@ -235,13 +236,13 @@ legend_elements = [Line2D([0], [0], marker='s', color = "none",
                                              markerfacecolor ='#6DD2EA', markeredgecolor = "#167F99",
                                              label = 'H$_\mathrm{2}$ wind', markersize = 5),
                    Line2D([0], [0], marker='o', color = "none", 
-                                             markerfacecolor ='#D3D3D3', markeredgecolor = "#808080",
+                                             markerfacecolor ='#6B8AB5', markeredgecolor = "#3D5A80",
                                              label = 'H$_\mathrm{2}$ grid', markersize = 5)]
 
 fig.legend(handles = legend_elements, frameon = False, loc = "upper center", ncol = 6, 
            prop={"size":8}, bbox_to_anchor=(0.5, 0.05), handletextpad = 0.1)
 
-plt.savefig('Figure Stacked.jpg', dpi=600, format='jpg', bbox_inches="tight")
-plt.savefig('Figure Stacked.svg', dpi=600, format='svg', bbox_inches="tight")
+plt.savefig('Figure stacked.jpg', dpi=600, format='jpg', bbox_inches="tight")
+plt.savefig('Figure stacked.svg', dpi=600, format='svg', bbox_inches="tight")
 
 

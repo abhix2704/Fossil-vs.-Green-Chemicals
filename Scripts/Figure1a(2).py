@@ -105,10 +105,10 @@ plt.text(37, 2.080, "Russia-Ukraine\nconflict", color = "grey", fontsize = fonts
 plt.text(41, 2.700, "Russia cuts\nsupply", color = "grey", fontsize = fontsize_label, ha = "right")
 
 plt.twinx()
-plt.ylim(0.001,1)
+plt.ylim(0,1)
 plt.yticks([])
-plt.plot(index[NGindex], elecPrices[NGindex], color = "#36454F", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
-plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#36454F", edgecolors = "#36454F", marker = "P", s = 15, zorder = 1)
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#3D5A80", edgecolors = "#3D5A80", marker = "P", s = 15, zorder = 1)
 
 
 sheetName = "Methanol"
@@ -174,18 +174,21 @@ plt.text(37, 2.080, "Russia-Ukraine\nconflict", color = "grey", fontsize = fonts
 plt.text(41, 2.700, "Russia cuts\nsupply", color = "grey", fontsize = fontsize_label, ha = "right")
 
 plt.twinx()
-plt.ylim(0.001,1)
+ax2 = plt.gca()
+plt.ylim(0,1)
 #plt.yticks([])
-plt.ylabel("Electricity price [USD kWh$^\mathrm{-1}$]")
-plt.plot(index[NGindex], elecPrices[NGindex], color = "#36454F", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
-plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#36454F", edgecolors = "#36454F", marker = "P", s = 15, zorder = 1)
+plt.ylabel("Electricity price [USD kWh$^\mathrm{-1}$]", color = "#3D5A80")
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#3D5A80", edgecolors = "#3D5A80", marker = "P", s = 15, zorder = 1)
+ax2.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
+ax2.tick_params(axis = 'y', colors = "#3D5A80", which = "both")
 
 
 legend_elements = [Line2D([0], [0], marker='o', color = "none", 
                           markerfacecolor ='#808080', markeredgecolor = "none",
                           label = 'Natural gas price', markersize = 5),
                    Line2D([0], [0], marker='P', color = "none", 
-                                             markerfacecolor ='#36454F', markeredgecolor = "#36454F",
+                                             markerfacecolor ='#3D5A80', markeredgecolor = "#3D5A80",
                                              label = 'Grid electrictiy', markersize = 5),
                    Line2D([0], [0], marker='s', color = "none", 
                                              markerfacecolor ='#ffffff', markeredgecolor = "black",
@@ -206,11 +209,11 @@ plt.savefig('Figure 1a (version 2).svg', dpi=600, format='svg', bbox_inches="tig
 
 """
 plt.subplot(3,2,4)
-plt.title("(d) Biomass", y = 0.9, color = "blue", fontsize = 18)
+plt.title("(d) Biomass", y = 0.9, color = "#3D5A80", fontsize = 18)
 plt.plot(index[0:l], market[0:l], "--", color = "brown", linewidth = 2)
 plt.plot(index[0:l], BAUprices[0:l], color = "black")
 plt.xlim(0,index[len(index)-1]+2)
-plt.plot(index[0:l], gABiomassCCS[0:l], color = "blue", linewidth = 2)
+plt.plot(index[0:l], gABiomassCCS[0:l], color = "#3D5A80", linewidth = 2)
 plt.arrow(index[l-6]+0.1, BAUprices[l-6]+100, -1, 0, head_width = 30, head_length = 0.5, color = "black")
 plt.ylim(a)
 plt.ylabel("Ammonia price [USD t$^\mathrm{-1}$]")
