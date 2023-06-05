@@ -26,7 +26,7 @@ plt.rcParams['font.family'] = 'Arial'
 fig = plt.figure(figsize=(fig_length[2], fig_height*0.8))
 
 gs1 = gridspec.GridSpec(3, 3)
-gs1.update(wspace = 0.075, hspace = 0.2)
+gs1.update(wspace = 0.075, hspace = 0.25)
 
 fileName = "Prices regionalization.xlsx"
 
@@ -47,11 +47,11 @@ miLabels = []
 ma = []
 maLabels = []
 for i in range(0,l):
-    if i == 0 or i % 12 == 0:
+    if i == 0 or i % 24 == 0:
         labels[i] = BAUMdf["$/ton"][i]
         ma.append(i + 1)
         maLabels.append(labels[i])
-    elif i % 2 == 0 and i % 12 != 0:
+    elif i % 2 == 0 and i % 24 != 0:
         labels[i] = ""
         mi.append(i + 1)
         miLabels.append(labels[i])
@@ -85,6 +85,8 @@ ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 #ax.set_xticks(ma, labels = maLabels, rotation = 45)
 #ax.set_xticks(mi, minor=True)
 plt.xticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 #plt.yticks([])
 plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
 
@@ -110,6 +112,8 @@ ax = plt.gca()
 #ax.set_xticks(mi, minor=True)
 plt.xticks([])
 plt.yticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 #plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
 
 plt.subplot(gs1[2])
@@ -134,6 +138,8 @@ ax = plt.gca()
 #ax.set_xticks(mi, minor=True)
 plt.xticks([])
 plt.yticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 #plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
 
 plt.subplot(gs1[3])
@@ -152,6 +158,8 @@ ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 #ax.set_xticks(ma, labels = maLabels)
 #ax.set_xticks(mi, minor=True)
 plt.xticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 #plt.yticks([])
 plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
 
@@ -201,6 +209,8 @@ ax = plt.gca()
 #ax.set_xticks(mi, minor=True)
 plt.xticks([])
 plt.yticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 #plt.ylabel("Production cost [USD kg$^\mathrm{-1}$]")
 
 plt.subplot(gs1[6])

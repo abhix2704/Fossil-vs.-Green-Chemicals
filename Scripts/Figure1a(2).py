@@ -107,7 +107,7 @@ plt.text(41, 2.700, "Russia cuts\nsupply", color = "grey", fontsize = fontsize_l
 plt.twinx()
 plt.ylim(0,1)
 plt.yticks([])
-plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1.5, zorder = 0, linestyle = ":", alpha = 1.0)
 plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#3D5A80", edgecolors = "#3D5A80", marker = "P", s = 15, zorder = 1)
 
 
@@ -178,7 +178,7 @@ ax2 = plt.gca()
 plt.ylim(0,1)
 #plt.yticks([])
 plt.ylabel("Electricity price [USD kWh$^\mathrm{-1}$]", color = "#3D5A80")
-plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1, zorder = 0, linestyle = ":", alpha = 1.0)
+plt.plot(index[NGindex], elecPrices[NGindex], color = "#3D5A80", linewidth = 1.5, zorder = 0, linestyle = ":", alpha = 1.0)
 plt.scatter(index[NGindex], elecPrices[NGindex], facecolors = "#3D5A80", edgecolors = "#3D5A80", marker = "P", s = 15, zorder = 1)
 ax2.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 ax2.tick_params(axis = 'y', colors = "#3D5A80", which = "both")

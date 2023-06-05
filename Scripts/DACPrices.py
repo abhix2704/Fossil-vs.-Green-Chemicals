@@ -62,6 +62,8 @@ NGindex = [0,3,7,12,15,19,24,27,31,36,39,43,46]
 plt.subplot(1,1,1)
 #plt.plot(index[NGindex], CO2[NGindex], linewidth = 1.5, color = "#000000", zorder = 1)
 plt.scatter(index[NGindex], CO2[NGindex], marker = "o", facecolors = "#ffffff", edgecolors = "#000000", s = 15, zorder = 2)
+plt.plot(index[NGindex], CO2[NGindex], linewidth = 1, color = "#000000", zorder = 1, linestyle = '--')
+
 yerr = np.array([CO2 - CO2Low[NGindex], CO2High[NGindex] - CO2[NGindex]])
 #plt.errorbar(index[NGindex], CO2[NGindex], yerr, color = '#808080', fmt = "None", capsize = 2, elinewidth = 0.5, zorder = 0)
 plt.fill_between(index[NGindex], CO2Low[NGindex], CO2High[NGindex], color = "000000", alpha = 0.1, zorder = 0)

@@ -25,7 +25,7 @@ plt.rcParams.update({'font.size': 8})
 plt.rcParams['font.family'] = 'Arial'
 fig = plt.figure(figsize=(fig_length[2],fig_height*0.7))
 gs1 = gridspec.GridSpec(2, 2)
-gs1.update(wspace = 0.075, hspace = 0.1)
+gs1.update(wspace = 0.075, hspace = 0.15)
 
 fileName = "Prices regionalization.xlsx"
 
@@ -100,6 +100,8 @@ ax.yaxis.set_minor_locator(tk.AutoMinorLocator(2))
 plt.xlim(-1,USdf.Index[len(USdf.Index)-1]+2)
 plt.ylim([0, 2.7])
 plt.xticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 
 plt.subplot(gs1[1])
 #plt.title("(c) Ammonia - H$_\mathrm{2}$ SMR$_\mathrm{CCS}$", color = "black", fontsize = fontsize_title, fontweight = "bold")
@@ -128,6 +130,8 @@ plt.xlim(-1,USdf.Index[len(USdf.Index)-1]+2)
 plt.ylim([0, 2.7])
 plt.yticks([])
 plt.xticks([])
+ax.set_xticks(ma, labels = maLabels)
+ax.set_xticks(mi, minor=True)
 
 
 

@@ -72,7 +72,6 @@ index = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 subIndex = np.array([0, 2, 4, 6, 8, 10])
 
 plt.subplot(gs1[0])
-plt.title("Levelised cost of hydrogen", color = "black", fontsize = fontsize_title, fontweight = "bold")
 plt.plot(index, onlyInflationWind, color = "#167F99", linewidth = 1, zorder = 4, linestyle = "-")
 plt.scatter(index[subIndex], onlyInflationWind[subIndex], marker = "^", facecolors = "#6DD2EA", edgecolors = "#167F99", s = 15, zorder = 4)
 plt.plot(index, inflationNGWind, color = "#808080", linewidth = 1, zorder = 3, linestyle = "-")

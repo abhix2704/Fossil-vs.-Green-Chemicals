@@ -29,12 +29,12 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="4.1337093"
-     inkscape:cx="293.56201"
-     inkscape:cy="167.04126"
-     inkscape:window-width="3200"
-     inkscape:window-height="1721"
-     inkscape:window-x="3191"
+     inkscape:zoom="2.9229739"
+     inkscape:cx="303.62912"
+     inkscape:cy="177.04571"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="figure_1" />
@@ -1905,15 +1905,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:7.2px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       x="-133.30206"
-       y="34.297676"
+       x="129.96234"
+       y="-30.2808"
        id="text3210-7"
-       transform="rotate(-102.99065)"><tspan
+       transform="rotate(77.00935)"><tspan
          sodipodi:role="line"
          id="tspan3208-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
-         x="-133.30206"
-         y="34.297676">Wind ammonia 2030-2050 (predicted)</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="129.96234"
+         y="-30.2808">Wind ammonia 2030-2050 (predicted)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:7.2px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
@@ -1922,7 +1922,7 @@
        id="text3210"><tspan
          sodipodi:role="line"
          id="tspan3208"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="98.117409"
          y="168.4975">Feb '22</tspan></text>
     <g
@@ -1956,7 +1956,7 @@
        id="text3210-8-8"><tspan
          sodipodi:role="line"
          id="tspan3208-7-97"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="138.03685"
          y="106.8105">Aug '22</tspan></text>
     <text
@@ -1967,7 +1967,7 @@
        id="text3210-4-1"><tspan
          sodipodi:role="line"
          id="tspan3208-4-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="98.551407"
          y="106.8105">Feb '22</tspan></text>
     <g
@@ -2032,7 +2032,7 @@
        id="text3210-8"><tspan
          sodipodi:role="line"
          id="tspan3208-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="186.44785"
          y="39.2635">Aug '22</tspan></text>
     <g
@@ -3301,15 +3301,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:7.2px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       x="-85.937248"
-       y="290.28769"
+       x="83.216362"
+       y="-286.33835"
        id="text3210-7-5"
-       transform="rotate(-90.669132)"><tspan
+       transform="rotate(89.330868)"><tspan
          sodipodi:role="line"
          id="tspan3208-2-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
-         x="-85.937248"
-         y="290.28769">Wind methanol 2030-2050 (predicted)</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         x="83.216362"
+         y="-286.33835">Wind methanol 2030-2050 (predicted)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;line-height:7.2px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
@@ -3318,7 +3318,7 @@
        id="text3210-2"><tspan
          sodipodi:role="line"
          id="tspan3208-74"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="295.75842"
          y="169.67349">Feb '22</tspan></text>
     <g
@@ -3352,7 +3352,7 @@
        id="text3210-8-8-0"><tspan
          sodipodi:role="line"
          id="tspan3208-7-97-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="395.60083"
          y="106.8105">Aug '22</tspan></text>
     <text
@@ -3363,7 +3363,7 @@
        id="text3210-4-3"><tspan
          sodipodi:role="line"
          id="tspan3208-4-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#167f99;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="344.5144"
          y="106.8105">Feb '22</tspan></text>
     <g
@@ -3428,7 +3428,7 @@
        id="text3210-8-9"><tspan
          sodipodi:role="line"
          id="tspan3208-7-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.2"
          x="381.82785"
          y="40.7635">Aug '22</tspan></text>
     <g
@@ -3438,7 +3438,7 @@
        id="g1673-0-2"
        style="stroke:#000000;stroke-width:63.501;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1">
       <path
-         d="m 3871.8657,4757 c -342,-150 -564,-420 -644,-781 -16,-76 -30,-114 -46,-131 -31,-33 -84,-47 -135,-35 -62,15 -224,12 -290,-5 -33,-8 -98,-34 -144,-57 -197,-99 -332,-305 -348,-534 -4,-53 -12,-94 -23,-112 -18,-30 -74,-62 -107,-62 -29,0 -131,-37 -177,-64 -98,-57 -187,-181 -217,-298 -11,-46 -13,-48 -47,-48 -20,0 -72,5 -117,12 -95,13 -123,8 -170,-33 -25,-22 -39,-47 -51,-88 -30,-108 -36,-121 -80,-181 l -44,-60 h -246.00004 -246 l -35,37 c -137,148 -131,374 13,516 65,64 131,95 234,108 149.00004,18 190.00004,65 190.00004,217 0,163 52,294 160,402 143,143 332,192 536,140 91,-24 134,-20 182,16 45,35 59,68 73,170 29,224 130,424 293,584 56,54 68,84 44,108 -7,7 -24,12 -39,12 -21,0 -46,-20 -116,-94 -168,-178 -252,-365 -288,-639 -10,-73 -32,-83 -131,-57 -238,62 -484,-11 -647,-191 -107,-118 -167,-275 -167,-439 0,-109 -8,-119 -113.00004,-130 -181,-21 -329,-138 -397,-315 -46,-120 -26,-298 44,-405 l 23,-35 -20,-27 c -19,-26 -19,-28 -3,-52 10,-16 26,-26 41,-26 25,0 25,-1 19,-72 -3,-40 -39,-521 -79,-1068 -64,-871 -71,-998 -59,-1018 16,-25 42,-28 68,-9 17,12 23,73 62,603 24,324 44,592 44,597 0,4 130,7 289,7 h 288.00004 l 6,-67 c 3,-38 22,-302 43,-588 39,-546 42,-565 87,-565 34,0 47,19 47,70 0,25 -34,509 -75,1074 -42,566 -74,1030 -73,1030 2,1 17,6 33,12 26,8 30,15 33,49 2,22 9,47 17,55 23,27 63,115 79,175 22,86 31,92 116,77 39,-7 93,-12 120,-12 42,0 50,-3 50,-19 0,-35 40,-148 65,-186 24,-35 25,-39 10,-55 -26,-29 -16,-73 20,-84 17,-6 31,-11 33,-12 1,-1 -31,-465 -73,-1031 -41,-567 -75,-1050 -75,-1075 0,-49 13,-68 47,-68 46,0 48,18 87,565 21,286 40,550 43,588 l 6,67 h 288 c 159,0 289,-3 289,-7 0,-5 20,-273 44,-597 39,-529 45,-591 62,-603 26,-19 52,-16 68,10 12,19 5,145 -59,1017 -40,547 -76,1028 -79,1068 -6,71 -6,72 19,72 28,0 59,39 49,63 -3,9 4,29 15,46 12,17 37,63 55,103 55,119 86,138 234,138 53,0 129,7 167,15 144,30 300,132 390,256 70,94 166,115 266,59 171,-97 304,-142 473,-161 339,-38 708,111 920,370 56,68 66,97 44,119 -29,29 -59,13 -146,-79 -102,-108 -179,-165 -303,-223 -169,-78 -328,-105 -506,-86 -138,15 -240,48 -391,126 -113,59 -129,64 -186,64 -98,0 -152,-23 -216,-93 -111,-122 -160,-164 -229,-201 -89,-46 -178,-66 -306,-66 -84,0 -108,-4 -150,-24 -47,-21 -135,-106 -135,-128 0,-22 -52,-117 -85,-156 l -37,-42 h -243 -243 l -37,41 c -21,23 -49,67 -64,98 -22,48 -26,69 -26,151 0,82 4,103 27,152 52,112 159,195 280,217 138,25 218,111 218,237 0,22 7,71 15,109 40,189 170,338 355,406 67,25 141,28 345,18 54,-3 78,1 105,15 81,42 121,102 140,207 60,336 304,631 617,745 59,22 75,32 80,52 16,65 -40,76 -147,29 z m -2690,-2595 c 0,-24 18,-271 25,-344 l 6,-58 H 961.86566 c -231,0 -250,1 -250,18 0,9 7,98 15,197 8,99 15,186 15,193 0,9 51,12 220,12 205.00004,0 220.00004,-1 220.00004,-18 z m 1220,6 c 0,-7 7,-94 15,-193 8,-99 15,-188 15,-197 0,-17 -19,-18 -250,-18 h -251 l 6,58 c 7,73 25,320 25,344 0,17 15,18 220,18 169,0 220,-3 220,-12 z m -1187,-540 c 3,-18 9,-85 12,-148 4,-63 9,-123 11,-132 5,-17 -13,-18 -276.00004,-18 h -282 l 5,33 c 3,17 9,88 13,157 3,69 8,128 11,133 2,4 116,7 252,7 h 249.00004 z m 1229,-73 c 3,-55 9,-128 13,-162 l 6,-63 h -281 c -263,0 -281,1 -276,18 2,9 7,69 11,132 3,63 9,130 12,148 l 5,32 252,-2 251,-3 z"
+         d="m 4339.4118,4757 c -342,-150 -564,-420 -644,-781 -16,-76 -30,-114 -46,-131 -31,-33 -84,-47 -135,-35 -62,15 -224,12 -290,-5 -33,-8 -98,-34 -144,-57 -197,-99 -332,-305 -348,-534 -4,-53 -12,-94 -23,-112 -18,-30 -74,-62 -107,-62 -29,0 -131,-37 -177,-64 -98,-57 -187,-181 -217,-298 -11,-46 -13,-48 -47,-48 -20,0 -72,5 -117,12 -95,13 -123,8 -170,-33 -25,-22 -39,-47 -51,-88 -30,-108 -36,-121 -80,-181 l -44,-60 h -246.0001 -246 l -35,37 c -137,148 -131,374 13,516 65,64 131,95 234,108 149.0001,18 190.0001,65 190.0001,217 0,163 52,294 160,402 143,143 332,192 536,140 91,-24 134,-20 182,16 45,35 59,68 73,170 29,224 130,424 293,584 56,54 68,84 44,108 -7,7 -24,12 -39,12 -21,0 -46,-20 -116,-94 -168,-178 -252,-365 -288,-639 -10,-73 -32,-83 -131,-57 -238,62 -484,-11 -647,-191 -107,-118 -167,-275 -167,-439 0,-109 -8,-119 -113.0001,-130 -181,-21 -329,-138 -396.99997,-315 -46,-120 -26,-298 43.99997,-405 l 23,-35 -20,-27 c -19,-26 -19,-28 -3,-52 10,-16 26,-26 41,-26 25,0 25,-1 19,-72 -3,-40 -39,-521 -79,-1068 C 960.41173,169 953.41173,42 965.41173,22 c 16,-25 41.99997,-28 67.99997,-9 17,12 23,73 62,603 24,324 44,592 44,597 0,4 130,7 289,7 h 288.0001 l 6,-67 c 3,-38 22,-302 43,-588 39,-546 42,-565 87,-565 34,0 47,19 47,70 0,25 -34,509 -75,1074 -42,566 -74,1030 -73,1030 2,1 17,6 33,12 26,8 30,15 33,49 2,22 9,47 17,55 23,27 63,115 79,175 22,86 31,92 116,77 39,-7 93,-12 120,-12 42,0 50,-3 50,-19 0,-35 40,-148 65,-186 24,-35 25,-39 10,-55 -26,-29 -16,-73 20,-84 17,-6 31,-11 33,-12 1,-1 -31,-465 -73,-1031 -41,-567 -75,-1050 -75,-1075 0,-49 13,-68 47,-68 46,0 48,18 87,565 21,286 40,550 43,588 l 6,67 h 288 c 159,0 289,-3 289,-7 0,-5 20,-273 44,-597 39,-529 45,-591 62,-603 26,-19 52,-16 68,10 12,19 5,145 -59,1017 -40,547 -76,1028 -79,1068 -6,71 -6,72 19,72 28,0 59,39 49,63 -3,9 4,29 15,46 12,17 37,63 55,103 55,119 86,138 234,138 53,0 129,7 167,15 144,30 300,132 390,256 70,94 166,115 266,59 171,-97 304,-142 473,-161 339,-38 708,111 920,370 56,68 66,97 44,119 -29,29 -59,13 -146,-79 -102,-108 -179,-165 -303,-223 -169,-78 -328,-105 -506,-86 -138,15 -240,48 -391,126 -113,59 -129,64 -186,64 -98,0 -152,-23 -216,-93 -111,-122 -160,-164 -229,-201 -89,-46 -178,-66 -306,-66 -84,0 -108,-4 -150,-24 -47,-21 -135,-106 -135,-128 0,-22 -52,-117 -85,-156 l -37,-42 h -243 -243 l -37,41 c -21,23 -49,67 -64,98 -22,48 -26,69 -26,151 0,82 4,103 27,152 52,112 159,195 280,217 138,25 218,111 218,237 0,22 7,71 15,109 40,189 170,338 355,406 67,25 141,28 345,18 54,-3 78,1 105,15 81,42 121,102 140,207 60,336 304,631 617,745 59,22 75,32 80,52 16,65 -40,76 -147,29 z m -2690,-2595 c 0,-24 18,-271 25,-344 l 6,-58 h -251.0001 c -231,0 -250,1 -250,18 0,9 7,98 15,197 8,99 15,186 15,193 0,9 51,12 220,12 205.0001,0 220.0001,-1 220.0001,-18 z m 1220,6 c 0,-7 7,-94 15,-193 8,-99 15,-188 15,-197 0,-17 -19,-18 -250,-18 h -251 l 6,58 c 7,73 25,320 25,344 0,17 15,18 220,18 169,0 220,-3 220,-12 z m -1187,-540 c 3,-18 9,-85 12,-148 4,-63 9,-123 11,-132 5,-17 -13,-18 -276.0001,-18 h -282 l 5,33 c 3,17 9,88 13,157 3,69 8,128 11,133 2,4 116,7 252,7 h 249.0001 z m 1229,-73 c 3,-55 9,-128 13,-162 l 6,-63 h -281 c -263,0 -281,1 -276,18 2,9 7,69 11,132 3,63 9,130 12,148 l 5,32 252,-2 251,-3 z"
          id="path1659-3-5"
          style="stroke:#000000;stroke-width:63.501;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" />
       <path
