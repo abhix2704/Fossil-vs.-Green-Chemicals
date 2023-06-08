@@ -8,7 +8,7 @@ NGPrices2021 = readmatrix('Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Rang
 NGPrices = NGPrices2021;
 
 NGReqWind = 0.002376642; % m3 per kWh of wind electricity
-NGReqSolar = 0.00709867; % m3 per kWh of solar electricity
+NGReqSolar = 0.002709867; % m3 per kWh of solar electricity
 NGReqWind = NGReqWind * 36.6 / 47.1; % kg natural gas per kWh
 NGReqSolar = NGReqSolar * 36.6 / 47.1; % kg natural gas per kWh
 
