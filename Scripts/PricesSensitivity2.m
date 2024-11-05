@@ -66,7 +66,7 @@ end
 
 
 prices = ammoniaPrices;
-writematrix(prices', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'E2')
+% writematrix(prices', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'E2')
 
 % Green process
 fileName = 'Ammonia/Green ammonia - 2019.xlsx';
@@ -95,7 +95,7 @@ for i = 1:length(elecPrices)
     gAmmoniaGridPrice(i) = gAmmoniaPriceWithoutH(j)+(hydrogenReq*HGridAvg(i)+...
         elecReq*elecPrices(i))/gAmmoniaProduced;
 end
-writematrix(gAmmoniaGridPrice', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'N2')
+% writematrix(gAmmoniaGridPrice', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'N2')
 
 
 % Green hydrogen prices from Parkinson 2019
@@ -161,8 +161,8 @@ end
 prices = [gAmmoniaBiomassCCS' gAmmoniaWind' gAmmoniaSolar' gAmmoniaNuclear'];
 pricesSe = [gAmmoniaWindLow'...
     gAmmoniaWindHigh' gAmmoniaSolarLow' gAmmoniaSolarHigh' gAmmoniaNuclearLow' gAmmoniaNuclearHigh'];
-writematrix(prices, 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'F2')
-writematrix(pricesSe, 'Prices Sensitivity 2.xlsx', 'Sheet', 'Ammonia high low', 'Range', 'E2')
+% writematrix(prices, 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'F2')
+% writematrix(pricesSe, 'Prices Sensitivity 2.xlsx', 'Sheet', 'Ammonia high low', 'Range', 'E2')
 
 % hydrogen from SMR-CCS (from G. Collodi et al. 2017)
 specificH2 = 11.94; % Nm3/kg of hydrogen
@@ -187,8 +187,8 @@ for i = 1:length(naturalGasPrices)
     gSMRCCS(i) = gAmmoniaPriceWithoutH(j) + (hydrogenReq*H2SMRCCS(i) +...
         elecReq*elecPrices(i))/gAmmoniaProduced;
 end
-writematrix(H2SMRCCS', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'T2')
-writematrix(gSMRCCS', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'U2')
+% writematrix(H2SMRCCS', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'T2')
+% writematrix(gSMRCCS', 'Prices sensitivity 2.xlsx', 'Sheet', 'Ammonia', 'Range', 'U2')
 
 %% Methanol sensitivity
 
@@ -213,7 +213,7 @@ for i = 1:length(naturalGasPrices)
 end
 
 prices = methanolPrices';
-writematrix(prices, 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol', 'Range', 'E2')
+% writematrix(prices, 'Prices sensitivity 2.xlsx', 'Sheet', 'Methanol', 'Range', 'E2')
 
 
 % DAC process (data from Daniel et al. 2021)
